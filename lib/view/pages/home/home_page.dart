@@ -1,8 +1,9 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+// import 'package:grouped_list/grouped_list.dart';
 import 'package:recipeapp/core/services/recipe_service.dart';
-import 'package:recipeapp/view/pages/profile/profile_page.dart';
+// import 'package:recipeapp/view/pages/profile/profile_page.dart';
 import 'package:recipeapp/view/pages/recipe/add_edit_recipe_page.dart';
 import 'package:recipeapp/view/pages/recipe/recipe_detail_page.dart';
 
@@ -101,15 +102,15 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: Text('Recipes'),
         actions: [
-          IconButton(
-            icon: Icon(Icons.person),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (_) => const ProfilePage()),
-              );
-            },
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.person),
+          //   onPressed: () {
+          //     Navigator.push(
+          //       context,
+          //       MaterialPageRoute(builder: (_) => const ProfilePage()),
+          //     );
+          //   },
+          // ),
           IconButton(
             icon: Icon(Icons.refresh),
             onPressed: () async {
@@ -225,6 +226,56 @@ class _HomePageState extends State<HomePage> {
                     },
                   ),
                 ),
+                // Expanded(
+                //   child: GroupedListView(
+                //     groupSeparatorBuilder: (String value) => Padding(
+                //       padding: const EdgeInsets.all(8.0),
+                //       child: Text(
+                //         value,
+                //         textAlign: TextAlign.start,
+                //         style: const TextStyle(
+                //           fontSize: 20,
+                //           fontWeight: FontWeight.bold,
+                //         ),
+                //       ),
+                //     ),
+                //     groupComparator: (value1, value2) =>
+                //         value2.compareTo(value1),
+                //     itemComparator: (item1, item2) =>
+                //         item1['cuisine'].compareTo(item2['cuisine']),
+                //     elements: _filteredRecipes,
+                //     groupBy: (element) => element['cuisine'],
+                //     itemBuilder: (BuildContext context, element) {
+                //       // final element = _filteredRecipes[index];
+                //       return Card(
+                //         margin: const EdgeInsets.symmetric(
+                //           horizontal: 16,
+                //           vertical: 8,
+                //         ),
+                //         child: ListTile(
+                //           leading: _buildImage(element['image']),
+                //           title: Text(element['name']),
+                //           subtitle: Text(
+                //             'Cuisine: ${element['cuisine']} | Rating: ${element['rating']}',
+                //           ),
+                //           onTap: () async {
+                //             final result = await Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                 builder: (_) =>
+                //                     RecipeDetailPage(recipe: element),
+                //               ),
+                //             );
+
+                //             if (result == 'deleted') {
+                //               _loadCuisinesAndRecipes(); // reload the list after deletion
+                //             }
+                //           },
+                //         ),
+                //       );
+                //     },
+                //   ),
+                // ),
               ],
             ),
       floatingActionButton: FloatingActionButton(

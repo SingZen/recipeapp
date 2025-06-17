@@ -28,13 +28,14 @@ class MyApp extends StatelessWidget {
       title: 'Recipe App',
       theme: ThemeData(primarySwatch: Colors.teal),
       debugShowCheckedModeBanner: false,
-      home: Consumer<AuthViewModel>(
-        builder: (context, authVM, _) {
-          if (authVM.isLoading) return SplashPage();
-          if (authVM.user != null) return HomePage();
-          return LoginPage();
-        },
-      ),
+      // home: Consumer<AuthViewModel>(
+      //   builder: (context, authVM, _) {
+      //     if (authVM.isLoading) return SplashPage();
+      //     if (authVM.user != null) return HomePage();
+      //     return LoginPage();
+      //   },
+      // ),
+      home: HomePage(),
     );
   }
 }
